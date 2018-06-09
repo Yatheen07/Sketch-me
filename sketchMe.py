@@ -33,14 +33,14 @@ def sketchIt(image):
     
     return mask
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0) # Captures the video using the default camera in ur PC
 
 while True:
-    ret , image_frame = cap.read()
-    cv2.imwrite("Your Sketch" , sketchIt(image_frame))
-    if cv2.waitKey(1) == 13 :
+    ret , image_frame = cap.read() # this line returns the frame as per the default frame rate 
+    cv2.imshow("Your Sketch" , sketchIt(image_frame)) # Continuously displays the sketch on the screen 
+    if cv2.waitKey(1) == 13 : # The screen closes only when enter is pressed
         break
     
-cap.release()
-cv2.destroyAllWindows()
+cap.release() # this is to stop capturing the video
+cv2.destroyAllWindows() # all corresponding windows are closed
     
